@@ -1,0 +1,218 @@
+Metadata-Version: 2.1
+Name: Random-Word-Generator
+Version: 1.3
+Summary: This is a random word generator module
+Home-page: https://github.com/AbhishekSalian/Random-Word-Generator
+Author: Abhishek C. Salian
+Author-email: abhishek.c.salian@gmail.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Natural Language :: English
+Requires-Python: >=3
+Description-Content-Type: text/markdown
+
+# Random Word Generator
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+![PyPI](https://img.shields.io/pypi/v/Random-Word-Generator)
+![Open Source? Yes!](https://badgen.net/badge/Open%20Source%20%3F/Yes%21/blue?icon=github)
+![Python3](https://img.shields.io/badge/python->=3-green.svg)
+[![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
+[![install](https://img.shields.io/badge/pip%20install-Random--Word--Generator-brightgreen)](https://pypi.org/project/Random-Word-Generator/)
+![code quality](https://www.code-inspector.com/project/11503/status/svg)
+![Code Score](https://www.code-inspector.com/project/11503/score/svg)
+
+<h1 align="center">
+    <img src="https://github.com/AbhishekSalian/Random-Word-Generator/blob/master/image/rwg.png?raw=true" alt="logo"/>
+</h1>
+
+## __How to install this library?__
+```
+pip3 install Random-Word-Generator
+
+OR
+
+pip install Random-Word-Generator
+```
+
+## __Which other python packages are needed to be installed?__
+* No need of any external packages
+* Only Python version >= 3 is required
+
+
+## __What this library does?__
+It helps us to generate random words i.e random noise in text data which is helpful in many text augmentation based tasks, NER, etc.
+
+## __Which methods are available currently in this library?__
+<table class="tg">
+<thead>
+  <tr>
+    <th class="tg-d9cy">Method</th>
+    <th class="tg-d9cy">Args</th>
+    <th class="tg-d9cy">Description</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-d9cy">.generate()</td>
+    <td class="tg-d9cy">None</td>
+    <td class="tg-d9cy"><span style="font-weight:400;font-style:normal">This will return a randomly generated word</span></td>
+  </tr>
+  <tr>
+    <td class="tg-d9cy">.getList(num_of_words)</td>
+    <td class="tg-d9cy">num_of_words</td>
+    <td class="tg-d9cy"><span style="font-weight:400;font-style:normal">This will return list of random words</span></td>
+  </tr>
+</tbody>
+</table>
+
+
+## __Setting to look out before generating random words__
+
+### Basic 
+```
+from RandomWordGenerator import RandomWord
+
+# Creating a random word object
+rw = RandomWord(max_word_size,
+                constant_word_size=True,
+                include_digits=False,
+                special_chars=r"@_!#$%^&*()<>?/\|}{~:",
+                include_special_chars=False)
+```
+<table class="tg" style="undefined;table-layout: fixed; width: 538px">
+<colgroup>
+<col style="width: 149px">
+<col style="width: 85px">
+<col style="width: 80px">
+<col style="width: 189px">
+</colgroup>
+<thead>
+  <tr>
+    <th class="tg-cbj7">Args</th>
+    <th class="tg-cbj7">Data Type</th>
+    <th class="tg-cbj7">Default</th>
+    <th class="tg-oj67">Description</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-oj67">max_word_size</td>
+    <td class="tg-oj67">int</td>
+    <td class="tg-oj67">10</td>
+    <td class="tg-oj67">Represents maximum length of randomly generated word</td>
+  </tr>
+  <tr>
+    <td class="tg-oj67">constant_word_size</td>
+    <td class="tg-oj67">bool</td>
+    <td class="tg-oj67">True</td>
+    <td class="tg-oj67">Represents word length of<br>randomly generated word</td>
+  </tr>
+  <tr>
+    <td class="tg-oj67">include_digits</td>
+    <td class="tg-oj67">bool</td>
+    <td class="tg-oj67">False</td>
+    <td class="tg-oj67">Represents whether or not to include digits in generated words</td>
+  </tr>
+  <tr>
+    <td class="tg-oj67">special_chars</td>
+    <td class="tg-oj67">regex/string</td>
+    <td class="tg-oj67">r"@_!#$%^&amp;*()&lt;&gt;?/\\<br>|}{~:"</td>
+    <td class="tg-oj67">Represents a regex string of all specials character you want to include in generated words</td>
+  </tr>
+  <tr>
+    <td class="tg-oj67">include_special_chars</td>
+    <td class="tg-oj67">bool</td>
+    <td class="tg-oj67">False</td>
+    <td class="tg-oj67">Represents inclusion of  special characters in generated words</td>
+  </tr>
+</tbody>
+</table>
+
+
+
+
+## __How to get started with this library?__
+
+1.  Simple random word generation with constant word size
+    ```
+    from RandomWordGenerator import RandomWord
+
+    rw = RandomWord(max_word_size=5)
+
+    print(rw.generate())
+    ```
+    ```
+    Output will be some random word like
+    > hdsjq
+    ```
+
+2. Simple random word generation with variable word size
+    ```
+    from RandomWordGenerator import RandomWord
+
+    rw = RandomWord(max_word_size=5,
+                    constant_word_size=False)
+
+    print(rw.generate())
+    ```
+    ```
+    Output will be some random word like
+    > gw
+    ```
+3. Random word generation with constant word size and including special character included
+    ```
+    from RandomWordGenerator import RandomWord
+
+    rw = RandomWord(max_word_size=5,
+                    constant_word_size=True,
+                    special_chars=r"@#$%.*",
+                    include_special_chars=True)
+
+    print(rw.generate())
+    ```
+    ```
+    Output will be some random word like
+    > gsd$
+    ```
+4. If we want randomly generated words in list we just have to input the argument with number of words we want
+    ```
+    from RandomWordGenerator import RandomWord
+
+    rw = RandomWord(max_word_size=5,
+                    constant_word_size=False)
+
+    print(rw.getList(num_of_random_words=3))
+    ```
+    ```
+    Output will be some random word like
+    > ['adjse', 'qytqw', ' klsdf', 'ywete', 'klljs']
+
+    ```
+
+## __Application__
+
+* In cases where we need to add  random noise in text
+* Name Entity Relation extraction based tasks
+* Text Data Augmentation based tasks
+
+
+## Author
+I will be happy to connect with you guys!!
+
+[Linkedin](https://www.linkedin.com/in/abhishek-c-salian/)
+
+[Twitter](https://www.twitter.com/@ACSalian)
+
+
+**Any suggestions are most welcome.**
+
+#
+
+
