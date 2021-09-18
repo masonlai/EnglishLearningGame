@@ -1,6 +1,6 @@
 import random
-from game import indexFrame
-from game.util import tkObjLib as lib, dbUtil
+import indexFrame
+from util import tkObjLib as lib, dbUtil
 from random_words import RandomWords
 from datetime import datetime
 from PyDictionary import PyDictionary

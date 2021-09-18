@@ -1,5 +1,5 @@
-from game.util import tkObjLib as lib
-from game.games import reorganize_word, word_Gussing, vocabulary_game
+from util import tkObjLib as lib
+from games import reorganize_word, word_Gussing, vocabulary_game
 import tkinter as tk
 import art
 
@@ -80,7 +80,7 @@ def setIndexFrame(displayFrame):
 
 
 def askName(mainFram):
-    lib.setTextLabel(mainFram, "Who are you, mother fucker?", font=askNameEntryFont, positionCfg=askNamePositionCfg)
+    lib.setTextLabel(mainFram, "Hi there, what is your name?", font=askNameEntryFont, positionCfg=askNamePositionCfg)
     nameEntryVar = tk.StringVar()
     nameEntry, value = lib.setAnsInput(mainFram, limit=20, font=askNameEntryFont, textvariable=nameEntryVar)
     confirmBtn = lib.setBtn(mainFram, "Confirm", font=confirmNameBtnFont, positionCfg=confirmNameBtnPositionCfg,

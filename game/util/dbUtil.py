@@ -2,7 +2,7 @@ import sqlite3
 
 
 def connect():
-    con = sqlite3.connect('game.db')
+    con = sqlite3.connect('db')
     # cur = con.cursor()
     return con
 

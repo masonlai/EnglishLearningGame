@@ -7,8 +7,8 @@ verify_ssl = true
 
 [packages]
 randomwords = "*"
-  = "*"
 pydictionary = "*"
+art = "*"
 
 [requires]
 python_version = "3.8"
